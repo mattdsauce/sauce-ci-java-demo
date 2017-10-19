@@ -152,6 +152,8 @@ public class WebDriverWithHelperJSONTest implements SauceOnDemandSessionIdProvid
                 capabilities);
         this.sessionId = ((RemoteWebDriver)webDriver).getSessionId().toString();
 
+        System.out.println("Sauce Connect SE Port: " + System.getenv("bamboo_SELENIUM_PORT"));
+
         if (browserVersion == "") browserVersion = "unspecified";
         String browserName = String.format("%-19s", browser).replaceAll(" ", ".").replaceFirst("[.]", " ");
         String browserVer = String.format("%-19s", browserVersion).replaceAll(" ", ".");
